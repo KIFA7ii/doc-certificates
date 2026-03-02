@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مكتبة الشهادات والالتزامات الجاهزة | Word</title>
+  <meta name="description" content="شهادات والتزامات وشكايات جاهزة بصيغة Word قابلة للتعديل والطباعة. الثمن 99DH والتسليم عبر واتساب."/>
+  <style>
+    :root{
+      --bg:#0b1020; --card:#0f1731; --muted:#a9b3d6; --text:#eef2ff;
+      --brand:#6d5efc; --brand2:#22c55e; --stroke: rgba(255,255,255,.10);
+      --shadow: 0 12px 40px rgba(0,0,0,.35); --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 80% 0%, rgba(109,94,252,.35), transparent 60%),
+                  radial-gradient(900px 500px at 0% 20%, rgba(34,197,94,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text); line-height:1.7;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:auto; padding:24px}
+
+    /* NAV */
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:14px 0;
+      position:sticky; top:0;
+      background: rgba(11,16,32,.72);
+      backdrop-filter: blur(12px);
+      z-index: 20;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800;}
+    .logo{width:38px; height:38px; border-radius:12px; background: linear-gradient(135deg, var(--brand), #9b87ff); box-shadow: var(--shadow);}
+    .nav .links{display:flex; gap:14px; flex-wrap:wrap; color:var(--muted); font-weight:700}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      border:1px solid var(--stroke); padding:12px 16px; border-radius:14px;
+      background: rgba(255,255,255,.06); transition: .2s ease; font-weight:900; cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10)}
+    .btn.primary{border-color: transparent; background: linear-gradient(135deg, var(--brand), #9b87ff);}
+    .btn.green{border-color: transparent; background: linear-gradient(135deg, var(--brand2), #16a34a);}
+
+    /* HERO */
+    .hero{display:grid; grid-template-columns: 1.05fr .95fr; gap:22px; padding:20px 0 8px; align-items:stretch;}
+    .card{
+      background: rgba(15,23,49,.78); border:1px solid var(--stroke);
+      border-radius: var(--radius); padding:22px; box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    h1{font-size: clamp(26px, 4.5vw, 44px); line-height:1.25; margin:0 0 10px}
+    .sub{color:var(--muted); margin:0 0 16px; font-size: 1.04rem}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 16px}
+    .badge{font-size:.92rem; padding:8px 10px; border-radius:999px; border:1px solid var(--stroke); background: rgba(255,255,255,.06); color: #dbe3ff; font-weight:800;}
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:6px}
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; margin-top:14px}
+    .mini{padding:14px; border-radius:16px; border:1px solid var(--stroke); background: rgba(255,255,255,.05);}
+    .mini b{display:block; margin-bottom:6px}
+
+    .section{padding:18px 0}
+    .section h2{margin:0 0 10px; font-size: clamp(20px, 3.5vw, 30px)}
+    .section p{color:var(--muted); margin:0 0 14px}
+
+    .list{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+    .li{display:flex; gap:10px; align-items:flex-start; padding:12px; border-radius:16px; border:1px solid var(--stroke); background: rgba(255,255,255,.05);}
+    .dot{width:10px; height:10px; border-radius:50%; margin-top:8px; background: linear-gradient(135deg, var(--brand2), #60a5fa); box-shadow: 0 8px 18px rgba(34,197,94,.25); flex: 0 0 auto;}
+
+    /* Images */
+    .preview{display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:12px;}
+    .shot{border-radius:16px; overflow:hidden; border:1px solid var(--stroke); background: rgba(255,255,255,.04); box-shadow: var(--shadow);}
+    .shot img{width:100%; height:150px; object-fit:cover; display:block;}
+    .shot .cap{padding:10px 10px 12px; color: var(--muted); font-weight:800; font-size:.9rem;}
+
+    .gallery{display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; margin-top:12px;}
+    .gallery .shot img{height:160px}
+
+    /* Pricing */
+    .pricing{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;}
+    .price{ position:relative; overflow:hidden; }
+    .tag{position:absolute; top:14px; left:14px; padding:6px 10px; border-radius:999px; background: rgba(34,197,94,.16); border:1px solid rgba(34,197,94,.35); color:#bff7cf; font-weight:1000; font-size:.9rem;}
+    .phead{display:flex; justify-content:space-between; align-items:baseline; gap:10px}
+    .amount{font-size:34px; font-weight:1100;}
+    .per{color:var(--muted); font-weight:800}
+    .muted{color:var(--muted)}
+
+    /* FAQ */
+    .faq details{border:1px solid var(--stroke); border-radius:16px; padding:12px 14px; background: rgba(255,255,255,.05);}
+    .faq details + details{margin-top:10px}
+    summary{cursor:pointer; font-weight:900}
+
+    /* ORDER FORM (آخر الصفحة) */
+    .form{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;}
+    input, textarea, select{
+      width:100%; padding:12px 12px; border-radius:14px;
+      border:1px solid var(--stroke); background: rgba(255,255,255,.06);
+      color: var(--text); outline:none;
+    }
+    textarea{min-height:90px; resize:vertical}
+    .note{font-size:.92rem; color: var(--muted)}
+
+    .footer{padding:18px 0 36px; color: var(--muted); display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,.10); margin-top:14px;}
+
+    /* Floating WhatsApp */
+    .wa-float{
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 9999;
+      display:flex; align-items:center; gap:10px;
+      padding:12px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(135deg, rgba(34,197,94,.95), rgba(22,163,74,.95));
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+      font-weight: 1000;
+    }
+    .wa-float:hover{transform: translateY(-1px);}
+    .wa-ico{
+      width:34px; height:34px;
+      border-radius: 999px;
+      display:grid; place-items:center;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.18);
+      flex: 0 0 auto;
+    }
+    .wa-hint{
+      font-size: .98rem;
+      white-space: nowrap;
+    }
+
+    /* Mobile improvements */
+    @media (max-width: 900px){
+      .container{padding:16px}
+      .nav{padding:10px 0}
+      .nav .links{display:none;} /* نخلي المنيو مخفية فالموبايل باش تبقى خفيفة */
+      .hero{grid-template-columns:1fr; gap:14px}
+      .card{padding:16px}
+      .grid3{grid-template-columns:1fr}
+      .list{grid-template-columns:1fr}
+      .pricing{grid-template-columns:1fr}
+      .gallery{grid-template-columns: repeat(2, 1fr)}
+      .shot img{height:140px}
+      .gallery .shot img{height:140px}
+      .form{grid-template-columns:1fr}
+      .btn{width:100%; padding:14px 16px} /* أزرار كبار للموبايل */
+      .hero-actions{gap:10px}
+      .wa-float{
+        right: 14px; left: 14px; /* كيولي بحال بار فالتحت */
+        bottom: 12px;
+        justify-content:center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <script>
+      const WA_NUMBER_INTL = "212768872782"; // 0768872782 -> 212768872782
+      const PRICE = "99";
+      function waLink(text){ return `https://wa.me/${WA_NUMBER_INTL}?text=${encodeURIComponent(text)}`; }
+    </script>
+
+    <!-- NAV -->
+    <div class="nav">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <div style="font-size:1.05rem">مكتبة الوثائق الجاهزة</div>
+          <div class="muted" style="font-size:.9rem">شهادات • التزامات • شكايات • Word</div>
+        </div>
+      </div>
+
+      <div class="links">
+        <a href="#features">المميزات</a>
+        <a href="#gallery">صور</a>
+        <a href="#pricing">الثمن</a>
+        <a href="#faq">الأسئلة</a>
+        <a href="#order">اطلب</a>
+      </div>
+
+      <a class="btn green" href="#order">اطلب عبر واتساب</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card">
+        <h1>شهادات والتزامات جاهزة بصيغة <span style="color:#c7bfff">Word</span> — تعديل وطباعة فـ دقائق</h1>
+        <p class="sub">
+          نماذج منسّقة ومصنّفة (التزامات + شكايات + شهادات) جاهزة للتعديل: غير بدّل الاسم والتاريخ والمعطيات وطبّع.
+        </p>
+
+        <div class="badges">
+          <div class="badge">✅ Word قابل للتعديل</div>
+          <div class="badge">⚡ تسليم عبر واتساب</div>
+          <div class="badge">📌 مصنّف ومنظّم</div>
+          <div class="badge">💰 الثمن: 99 DH</div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#order">اطلب الآن</a>
+          <a class="btn" href="#gallery">شوف الصور</a>
+        </div>
+
+        <div class="grid3">
+          <div class="mini"><b>سريع</b><span class="muted">كتوفر الوقت بدل تعاود تكتب من الصفر.</span></div>
+          <div class="mini"><b>شكل احترافي</b><span class="muted">تنسيق مرتب للطباعة والاستعمال.</span></div>
+          <div class="mini"><b>سهل</b><span class="muted">كتخدم غير بـ Microsoft Word.</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 8px; font-size:1.3rem">نماذج من داخل المكتبة (صور)</h3>
+        <div class="muted">هذه مجرد معاينة — الملفات الأصلية Word قابلة للتعديل.</div>
+
+        <div class="preview">
+          <div class="shot"><img src="doc 1.png" alt="معاينة 1"><div class="cap">التزامات / شهادات</div></div>
+          <div class="shot"><img src="doc2.png" alt="معاينة 2"><div class="cap">شكايات متنوعة</div></div>
+          <div class="shot"><img src="doc3.png" alt="معاينة 3"><div class="cap">نماذج إضافية</div></div>
+          <div class="shot"><img src="doc4.png" alt="معاينة 4"><div class="cap">قائمة ملفات Word</div></div>
+        </div>
+
+        <div style="margin-top:14px; padding:14px; border-radius:16px; border:1px dashed var(--stroke); background:rgba(255,255,255,.04)">
+          <b>واتساب الطلب</b>
+          <div class="note">0768872782</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section">
+      <div class="card">
+        <h2>علاش هاد المكتبة غادي تعاونك؟</h2>
+        <p>كتخليك تخدم بسرعة وبنفس الوقت بوثائق مرتّبة ومفهومة.</p>
+        <div class="list">
+          <div class="li"><span class="dot"></span><div><b>تعديل فوري</b><div class="muted">غير كتب المعطيات ديالك وطبّع.</div></div></div>
+          <div class="li"><span class="dot"></span><div><b>تنسيق جاهز</b><div class="muted">مهيّأ للطباعة بشكل محترم.</div></div></div>
+          <div class="li"><span class="dot"></span><div><b>مصنّف</b><div class="muted">التزامات/شكايات/شهادات… باش تلقى بسرعة.</div></div></div>
+          <div class="li"><span class="dot"></span><div><b>دعم واتساب</b><div class="muted">إلا احتاجيتي مساعدة فالتعديل/الطباعة.</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section">
+      <div class="card">
+        <h2>صور من داخل المنتج</h2>
+        <p>بدّل الصور غير بتبديل الملفات داخل مجلد <b>images</b>.</p>
+        <div class="gallery">
+          <div class="shot"><img src="doc4.png" alt="صورة 1"><div class="cap">مجلدات التزامات</div></div>
+          <div class="shot"><img src="doc3.png" alt="صورة 2"><div class="cap">شكايات جاهزة</div></div>
+          <div class="shot"><img src="doc4.png" alt="صورة 3"><div class="cap">نماذج متنوعة</div></div>
+          <div class="shot"><img src="doc4.png" alt="صورة 4"><div class="cap">قائمة Word</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section">
+      <div class="card">
+        <h2>الثمن</h2>
+        <p>ثمن المكتبة: <b style="font-size:1.2rem">99 DH</b> — الطلب والتسليم عبر واتساب.</p>
+
+        <div class="pricing">
+          <div class="card price">
+            <div class="tag">عرض واحد</div>
+            <div class="phead">
+              <div>
+                <b style="font-size:1.15rem">مكتبة الشهادات والالتزامات</b>
+                <div class="muted">Word قابل للتعديل</div>
+              </div>
+              <div>
+                <div class="amount">99</div>
+                <div class="per">DH</div>
+              </div>
+            </div>
+            <hr style="border:0; border-top:1px solid var(--stroke); margin:14px 0">
+            <div class="muted">✅ نماذج متعددة: التزامات + شكايات + شهادات</div>
+            <div class="muted">✅ تسليم عبر واتساب</div>
+            <div class="muted">✅ دعم بسيط إذا احتجت</div>
+            <div style="margin-top:14px"><a class="btn green" href="#order">اطلب الآن</a></div>
+          </div>
+
+          <div class="card price" style="background:rgba(255,255,255,.04)">
+            <div class="phead">
+              <div><b style="font-size:1.15rem">شنو غادي توصلك؟</b><div class="muted">ملفات Word مرتّبة</div></div>
+              <div class="muted">تسليم سريع</div>
+            </div>
+            <hr style="border:0; border-top:1px solid var(--stroke); margin:14px 0">
+            <div class="muted">📁 مجلدات مصنّفة</div>
+            <div class="muted">📝 كل نموذج بعنوان واضح</div>
+            <div class="muted">🖨️ جاهز للطباعة</div>
+            <div style="margin-top:14px"><a class="btn primary" href="#gallery">شوف الصور</a></div>
+          </div>
+
+          <div class="card price" style="background:rgba(255,255,255,.04)">
+            <div class="phead">
+              <div><b style="font-size:1.15rem">التواصل</b><div class="muted">طلب مباشر واتساب</div></div>
+              <div class="muted">0768872782</div>
+            </div>
+            <hr style="border:0; border-top:1px solid var(--stroke); margin:14px 0">
+            <div class="muted">💬 تواصل معايا فواتساب</div>
+            <div class="muted">✅ نأكد لك الطلب</div>
+            <div class="muted">📤 كنصيفط الملفات</div>
+            <div style="margin-top:14px"><a class="btn green" id="waQuick" href="#" target="_blank" rel="noopener">راسلني الآن</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="card faq">
+        <h2>أسئلة شائعة</h2>
+        <details><summary>واش الملفات كتخدم فـ Word؟</summary><div class="muted">نعم، قابلة للتعديل والطباعة.</div></details>
+        <details><summary>كيفاش كنستلم؟</summary><div class="muted">كنصيفط لك الملفات عبر واتساب (أو إيميل/رابط تحميل).</div></details>
+        <details><summary>واش نقدر نبدّل المعلومات؟</summary><div class="muted">أكيد: الاسم، CIN، العنوان، التاريخ…</div></details>
+      </div>
+    </section>
+
+    <!-- ORDER (الفورم غير هنا فآخر الصفحة) -->
+    <section id="order" class="section">
+      <div class="card">
+        <h2>أرسل معلوماتك هنا</h2>
+        <p>عبّي هاد الفورم وغادي يتحل واتساب برسالة جاهزة.</p>
+
+        <form class="form" onsubmit="return sendWhatsApp(event)">
+          <input id="name" placeholder="الاسم الكامل" required />
+          <input id="phone" placeholder="رقم الهاتف/واتساب ديالك" required />
+          <select id="delivery" required>
+            <option value="" selected disabled>طريقة التسليم</option>
+            <option>واتساب</option>
+            <option>إيميل</option>
+            <option>رابط تحميل</option>
+          </select>
+          <select id="pay" required>
+            <option value="" selected disabled>طريقة الدفع</option>
+            <option>تحويل بنكي</option>
+            <option>كاش / يد بيد</option>
+            <option>أخرى</option>
+          </select>
+          <textarea id="note" placeholder="ملاحظة (اختياري)"></textarea>
+          <button class="btn primary" type="submit">إرسال الطلب (واتساب)</button>
+        </form>
+
+        <div class="note" style="margin-top:10px">الثمن: 99DH — واتساب: 0768872782</div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div>© <span id="year"></span> مكتبة الوثائق الجاهزة</div>
+      <div class="muted">واتساب: 0768872782</div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Button -->
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <span class="wa-ico">
+      <!-- WhatsApp icon (SVG) -->
+      <svg width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M27.2 4.8C24.3 1.9 20.3 0.3 16.1 0.3C7.6 0.3 0.7 7.2 0.7 15.7C0.7 18.4 1.4 21 2.8 23.3L0.6 31.7L9.2 29.6C11.4 30.9 13.7 31.6 16.1 31.6H16.1C24.6 31.6 31.5 24.7 31.5 16.2C31.5 12 29.9 7.9 27.2 4.8Z" fill="white" fill-opacity="0.18"/>
+        <path d="M16.1 28.9C13.9 28.9 11.8 28.3 9.9 27.2L9.4 26.9L4.3 28.1L5.7 23.1L5.3 22.5C4.1 20.6 3.5 18.4 3.5 16.2C3.5 9 9.3 3.1 16.6 3.1C20.2 3.1 23.6 4.5 26.2 7.1C28.8 9.7 30.2 13.1 30.2 16.7C30.2 23.9 24.3 28.9 16.1 28.9Z" fill="white" fill-opacity="0.0"/>
+        <path d="M22.7 18.9C22.4 18.7 21 18 20.7 17.9C20.4 17.8 20.2 17.8 20 18.1C19.8 18.4 19.4 18.9 19.2 19.1C19 19.3 18.8 19.3 18.5 19.2C18.2 19.1 17.3 18.8 16.2 17.8C15.3 17 14.7 16 14.6 15.7C14.5 15.4 14.6 15.2 14.7 15.1C14.8 15 15 14.8 15.1 14.6C15.2 14.4 15.2 14.3 15.3 14.1C15.4 13.9 15.4 13.7 15.3 13.5C15.2 13.3 14.4 11.5 14.1 10.8C13.8 10.1 13.5 10.2 13.3 10.2H12.9C12.7 10.2 12.4 10.3 12.2 10.5C12 10.7 11.4 11.2 11.4 12.4C11.4 13.6 12.3 14.8 12.4 14.9C12.5 15 14.1 17.4 16.4 18.7C18.7 20.0 18.7 19.6 19.2 19.6C19.7 19.6 20.9 18.8 21.2 18.0C21.5 17.2 21.5 16.5 21.4 16.3C21.3 16.1 21.1 16.0 20.8 15.8Z" fill="white"/>
+      </svg>
+    </span>
+    <span class="wa-hint">راسلني على واتساب • 99DH</span>
+  </a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const defaultMsg = `السلام عليكم، بغيت نطلب مكتبة الشهادات والالتزامات بثمن 99DH.`;
+    document.getElementById("waQuick").href = waLink(defaultMsg);
+    document.getElementById("waFloat").href = waLink(defaultMsg);
+
+    function sendWhatsApp(e){
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const delivery = document.getElementById("delivery").value;
+      const pay = document.getElementById("pay").value;
+      const note = document.getElementById("note").value.trim();
+
+      const text =
+        `السلام عليكم، بغيت نطلب مكتبة الشهادات والالتزامات (99DH)%0A` +
+        `الاسم: ${name}%0A` +
+        `رقمي: ${phone}%0A` +
+        `التسليم: ${delivery}%0A` +
+        `الدفع: ${pay}%0A` +
+        (note ? `ملاحظة: ${note}%0A` : "");
+
+      window.open(`https://wa.me/${WA_NUMBER_INTL}?text=${text}`, "_blank");
+      return false;
+    }
+  </script>
+</body>
+</html>
